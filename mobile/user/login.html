@@ -47,8 +47,13 @@
         // 当用户点击 登录 按钮时, 发送 ajax请求
         $('.btn_login').on('click', function () {
             $.ajax({
+                // url: 'http://localhost:3000/user/login',  //这个是cors跨域的地址
                 url: '/api/user/login',
                 type: 'post',
+                // xhrFields: {
+                //     // 让浏览器将 cookie 传到后端
+                //     withCredentials : true
+                // },
                 data: {
                     username: $('input[name="name"]').val(),
                     password: $('input[name="pass"]').val()

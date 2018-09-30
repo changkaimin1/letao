@@ -62,8 +62,13 @@
      //如果直接访问 http://localhost:3000  会有跨域问题, 
      // 可以通过配置 Apache 的反向代理来解决
      //   /api 等同于  http://localhost:3000
+    //    url: 'http://localhost:3000/user/queryUserMessage', //这个是cors跨域的地址
        url: '/api/user/queryUserMessage',
        type: 'get',
+    //    xhrFields: {
+    //        //让浏览器将 cookie  传到后端
+    //        withCredentials:true
+    //    },
        success: function (info) {
            console.log(info);
            if (info.error) {
